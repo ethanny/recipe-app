@@ -1,0 +1,279 @@
+[
+    {
+      "id": "ramen01",
+      "name": "Hakata Ramen",
+      "ingredients": [
+        "1 batch tonkotsu broth",
+        "2 servings thin ramen noodles",
+        "2 slices chashu pork",
+        "1 tablespoon pickled ginger",
+        "1 teaspoon sesame seeds",
+        "2 tablespoons chopped green onions"
+      ],
+      "instructions": [
+        "Prepare or reheat a batch of tonkotsu broth until it reaches a simmer.",
+        "In a separate pot, boil the thin ramen noodles according to the package instructions, then drain thoroughly.",
+        "Divide the cooked noodles into serving bowls.",
+        "Pour the hot tonkotsu broth over the noodles in each bowl.",
+        "Top each bowl with a slice of chashu pork, a spoonful of pickled ginger, a sprinkle of sesame seeds, and chopped green onions.",
+        "Optionally, serve with additional noodles on the side for kaedama (noodle refill)."
+      ],
+      "cookingTime": "10 hours",
+      "servings": 2,
+      "image": "https://example.com/images/hakata.jpg"
+    },
+    {
+      "id": "ramen02",
+      "name": "Hiyashi Chūka",
+      "ingredients": [
+        "1 pack chilled ramen noodles",
+        "1/2 cucumber, julienned",
+        "2 slices ham, cut into strips",
+        "1 egg, scrambled and cut into strips",
+        "1/2 tomato, sliced",
+        "2 tablespoons soy sauce",
+        "1 tablespoon rice vinegar",
+        "1 teaspoon sesame oil"
+      ],
+      "instructions": [
+        "Boil the chilled ramen noodles until just tender, then rinse them under cold water and drain thoroughly to cool.",
+        "Julienne the cucumber, cut the ham into thin strips, and cook the egg into a thin omelet, then cut it into strips.",
+        "Slice the tomato into wedges or half-moons.",
+        "Mix the soy sauce, rice vinegar, and sesame oil together in a bowl to create the dressing.",
+        "Arrange the cold noodles on a serving plate or bowl.",
+        "Neatly place the cucumber, ham, egg, and tomato on top of the noodles.",
+        "Drizzle the dressing over the toppings just before serving."
+      ],
+      "cookingTime": "30 minutes",
+      "servings": 2,
+      "image": "https://example.com/images/hiyashi.jpg"
+    },
+    {
+      "id": "ramen03",
+      "name": "Kitakata Ramen",
+      "ingredients": [
+        "1 pork bone",
+        "1 tablespoon dried sardines (niboshi)",
+        "2 tablespoons soy sauce",
+        "2 servings flat curly noodles",
+        "4 slices pork belly",
+        "2 tablespoons chopped green onions"
+      ],
+      "instructions": [
+        "In a large pot, combine the pork bone and dried sardines with water and bring to a boil. Lower the heat and simmer for 1 to 1.5 hours.",
+        "Strain the broth into a clean pot and stir in the soy sauce to season.",
+        "Cook the flat curly noodles according to the package instructions, then divide into serving bowls.",
+        "Pour the hot broth over the noodles.",
+        "Top each bowl with pork belly slices and a generous amount of chopped green onions."
+      ],
+      "cookingTime": "1.5 hours",
+      "servings": 2,
+      "image": "https://example.com/images/kitakata.jpg"
+    },
+    {
+      "id": "ramen04",
+      "name": "Kyoto Ramen",
+      "ingredients": [
+        "1 chicken carcass",
+        "1 pork bone",
+        "2 tablespoons soy sauce",
+        "2 servings thick ramen noodles",
+        "2 tablespoons chopped green onions",
+        "4 bamboo shoots",
+        "2 slices chashu pork"
+      ],
+      "instructions": [
+        "Place the chicken carcass and pork bone into a pot filled with water and simmer for about 2 hours to make a rich broth.",
+        "Strain the broth and season with soy sauce to taste.",
+        "Cook the thick ramen noodles until tender and place them in serving bowls.",
+        "Ladle the hot broth over the noodles.",
+        "Top with chopped green onions, bamboo shoots, and slices of chashu pork."
+      ],
+      "cookingTime": "2 hours",
+      "servings": 2,
+      "image": "https://example.com/images/kyoto.jpg"
+    },
+    {
+      "id": "ramen05",
+      "name": "Miso Ramen",
+      "ingredients": [
+        "2 tablespoons miso paste",
+        "2 cups chicken broth",
+        "100 grams ground pork",
+        "1/4 cup corn kernels",
+        "1 tablespoon butter",
+        "1/2 cup bean sprouts",
+        "2 servings ramen noodles"
+      ],
+      "instructions": [
+        "Heat a pot over medium heat and sauté the ground pork until fully browned.",
+        "Add the miso paste and stir well to coat the pork evenly.",
+        "Pour in the chicken broth and simmer the mixture for 10 to 15 minutes.",
+        "In the meantime, cook the ramen noodles according to package instructions and place them in bowls.",
+        "Pour the hot miso broth over the noodles.",
+        "Top with corn kernels, a pat of butter, and fresh bean sprouts before serving."
+      ],
+      "cookingTime": "1 hour",
+      "servings": 2,
+      "image": "https://example.com/images/miso.jpg"
+    },
+    {
+      "id": "ramen06",
+      "name": "Onomichi Ramen",
+      "ingredients": [
+        "1 chicken carcass",
+        "1 tablespoon dried sardines",
+        "2 tablespoons soy sauce",
+        "1 tablespoon minced pork fat (back fat)",
+        "2 servings flat ramen noodles",
+        "2 slices chashu pork",
+        "2 tablespoons chopped green onions"
+      ],
+      "instructions": [
+        "In a pot, simmer the chicken carcass and dried sardines in water for about 2 hours to create a light but flavorful broth.",
+        "Strain the broth and stir in soy sauce and minced pork back fat.",
+        "Cook the flat ramen noodles and place them into serving bowls.",
+        "Ladle the hot broth over the noodles and top each bowl with a slice of chashu pork and chopped green onions."
+      ],
+      "cookingTime": "2 hours",
+      "servings": 2,
+      "image": "https://example.com/images/onomichi.jpg"
+    },
+    {
+      "id": "ramen07",
+      "name": "Shio Ramen",
+      "ingredients": [
+        "2 cups chicken stock",
+        "1 cup seafood stock",
+        "1 teaspoon sea salt",
+        "2 servings ramen noodles",
+        "2 tablespoons chopped green onions",
+        "1 sheet nori",
+        "2 slices fish cake (narutomaki)"
+      ],
+      "instructions": [
+        "Combine the chicken stock and seafood stock in a pot and bring to a gentle simmer.",
+        "Season with sea salt and stir well.",
+        "Cook the ramen noodles separately and divide into serving bowls.",
+        "Pour the hot broth over the noodles.",
+        "Garnish with chopped green onions, a sheet of nori (cut if needed), and narutomaki slices."
+      ],
+      "cookingTime": "45 minutes",
+      "servings": 2,
+      "image": "https://example.com/images/shio.jpg"
+    },
+    {
+      "id": "ramen08",
+      "name": "Shoyu Ramen",
+      "ingredients": [
+        "2 cups chicken stock",
+        "2 tablespoons soy sauce",
+        "2 servings ramen noodles",
+        "4 pieces menma (bamboo shoots)",
+        "2 tablespoons chopped green onions",
+        "1 sheet nori",
+        "1 soft-boiled egg"
+      ],
+      "instructions": [
+        "Heat the chicken stock in a saucepan and add soy sauce to season the broth.",
+        "Boil the ramen noodles according to the package instructions and place them in serving bowls.",
+        "Pour the seasoned broth over the noodles.",
+        "Top with menma, a sheet of nori (cut if necessary), chopped green onions, and a halved soft-boiled egg."
+      ],
+      "cookingTime": "1 hour",
+      "servings": 2,
+      "image": "https://example.com/images/shoyu.jpg"
+    },
+    {
+      "id": "ramen09",
+      "name": "Tantanmen",
+      "ingredients": [
+        "100 grams ground pork",
+        "2 servings ramen noodles",
+        "2 cups chicken broth",
+        "1 tablespoon soy sauce",
+        "2 tablespoons sesame paste",
+        "1 tablespoon chili oil",
+        "1 clove garlic, minced",
+        "2 tablespoons chopped scallions"
+      ],
+      "instructions": [
+        "In a pan over medium heat, cook the ground pork with the minced garlic until the pork is browned and aromatic.",
+        "Add sesame paste, soy sauce, and chicken broth. Stir well and let it simmer for about 10 minutes.",
+        "Cook the ramen noodles separately and divide them into bowls.",
+        "Pour the spicy sesame-infused broth over the noodles.",
+        "Top with cooked pork, chopped scallions, and an optional drizzle of extra chili oil for more heat."
+      ],
+      "cookingTime": "1 hour",
+      "servings": 2,
+      "image": "https://example.com/images/tantanmen.jpg"
+    },
+    {
+      "id": "ramen10",
+      "name": "Tonkotsu Ramen",
+      "ingredients": [
+        "1 kilogram pork bones",
+        "2 servings ramen noodles",
+        "2 slices chashu pork",
+        "1 clove garlic",
+        "2 tablespoons chopped green onions",
+        "1/4 cup wood ear mushrooms",
+        "1 tablespoon soy sauce",
+        "1 soft-boiled egg"
+      ],
+      "instructions": [
+        "Boil the pork bones in a large pot for 8 to 12 hours until the broth becomes rich and creamy white. Add water as needed during simmering.",
+        "Strain the broth to remove solids, then season with soy sauce and crushed garlic.",
+        "Cook ramen noodles and place them in serving bowls.",
+        "Pour the tonkotsu broth over the noodles.",
+        "Top with slices of chashu pork, wood ear mushrooms, green onions, and halved soft-boiled egg."
+      ],
+      "cookingTime": "10 hours",
+      "servings": 2,
+      "image": "https://example.com/images/tonkotsu.jpg"
+    },
+    {
+      "id": "ramen11",
+      "name": "Tokyo-style Ramen",
+      "ingredients": [
+        "1 chicken carcass",
+        "1 pork bone",
+        "2 tablespoons soy sauce",
+        "2 servings wavy ramen noodles",
+        "2 slices narutomaki",
+        "1 soft-boiled egg",
+        "1 sheet nori"
+      ],
+      "instructions": [
+        "Simmer the chicken carcass and pork bone in water for about 2 hours to extract the flavor and create a light broth.",
+        "Strain the broth and season with soy sauce.",
+        "Cook the wavy ramen noodles and place them in serving bowls.",
+        "Pour the broth over the noodles and garnish with slices of narutomaki, halved soft-boiled egg, and a sheet of nori."
+      ],
+      "cookingTime": "2 hours",
+      "servings": 2,
+      "image": "https://example.com/images/tokyo.jpg"
+    },
+    {
+      "id": "ramen12",
+      "name": "Tsukemen",
+      "ingredients": [
+        "2 servings thick ramen noodles",
+        "2 cups concentrated pork or chicken broth",
+        "1 tablespoon soy sauce",
+        "1 teaspoon rice vinegar",
+        "2 slices chashu",
+        "1 sheet nori"
+      ],
+      "instructions": [
+        "Boil the thick ramen noodles until cooked, then rinse under cold water to cool and remove excess starch.",
+        "In a saucepan, warm the concentrated broth and mix in soy sauce and rice vinegar.",
+        "Place the noodles on a serving plate and pour the dipping broth into a separate small bowl.",
+        "Serve the noodles with slices of chashu and a sheet of nori on the side.",
+        "To eat, dip the noodles into the broth before each bite and enjoy with toppings."
+      ],
+      "cookingTime": "1 hour",
+      "servings": 2,
+      "image": "https://example.com/images/tsukemen.jpg"
+    }
+  ]
