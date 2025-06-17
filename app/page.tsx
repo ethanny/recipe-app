@@ -34,7 +34,6 @@ export default function Home() {
             text-sm text-center font-[family-name:var(--font-geist-mono)]
             list-inside list-decimal
             sm:text-left
-            
           "
         >
           <li
@@ -48,7 +47,8 @@ export default function Home() {
                 px-1 py-0.5
                 font-semibold
                 bg-black/[.05]
-                dark:bg-white/[.06] rounded
+                rounded-sm
+                dark:bg-white/[.06]
               "
             >
               app/page.tsx
