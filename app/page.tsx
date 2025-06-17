@@ -1,6 +1,8 @@
 "use client";
 import { Recipe } from "./api/recipes/route";
 import { useEffect, useState } from "react";
+import RecipeCard from "./components/RecipeCard";
+import Link from "next/link";
 
 export default function Home() {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
@@ -27,7 +29,7 @@ export default function Home() {
         setError(error.message);
       }
     } finally {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // await new Promise((resolve) => setTimeout(resolve, 1000));
       setIsLoading(false);
     }
   }
@@ -51,21 +53,56 @@ export default function Home() {
   return (
     <div
       className="
-        "
-        >
-        {error && <div>{error}</div>}
-
-        {recipes.map((recipe: Recipe) => (
-        <div key={recipe.id}>
-        <h2
-        className="
-        text-2xl font-bold
+        flex flex-col
+        p-2
+        gap-2
+        md:p-4 md:gap-4
       "
-          >
-            {recipe.name}
-          </h2>
+    >
+      {error && <div>{error}</div>}
+      <header
+        className="
+          flex flex-col
+          items-center justify-between
+          md:flex-row
+        "
+      >
+        {/* Title */}
+        <h1
+          className="
+            sticky top-0
+          "
+        >
+          Ramen Recipes
+        </h1>
+
+        {/* Search */}
+        <div
+          className="
+            w-full
+            p-2
+            border-2
+            md:w-1/3
+          "
+        >
+          <h2>Search</h2>
         </div>
-      ))}
+      </header>
+
+      <section
+        className="
+          grid grid-cols-1
+          border-t-2
+          md:grid-cols-2
+          lg:grid-cols-3
+        "
+      >
+        {recipes.map((recipe: Recipe, index: number) => (
+          <Link href={`/recipes/${recipe.id}`} key={index}>
+            <RecipeCard recipe={recipe} index={index + 1} />
+          </Link>
+        ))}
+      </section>
     </div>
   );
 }

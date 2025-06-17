@@ -13,13 +13,14 @@ export type Recipe = {
 
 type ApiResponse = {
     message: string;
-    recipes?: Recipe[];
+    recipes?: Recipe[] | Recipe;
 }
 
 export async function GET(request: NextRequest){
     const url = request.nextUrl.searchParams
     const action = url.get('a')
     const query = url.get('q')
+    const id = url.get('id')
 
     let res: ApiResponse = {message: 'Invalid request'}
 
@@ -27,6 +28,21 @@ export async function GET(request: NextRequest){
         res = {
             message: '',
             recipes: recipes
+        }
+    }else if (action == 'get' && query == 'recipe' && id){
+        const recipe = recipes.find((recipe: Recipe) => recipe.id === id);
+       
+        if (recipe) {
+            res = {
+                message: '',
+                recipes: recipe
+            }
+            return NextResponse.json(res);
+        } else {
+            return NextResponse.json(
+                { message: 'Recipe not found' },
+                { status: 404 }
+            );
         }
     }
 
