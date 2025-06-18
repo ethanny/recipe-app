@@ -22,8 +22,12 @@ body {
   background: var(--color-background);
 }
 
-@utility no-scrollbar {
-  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+@utility row {
+  @apply flex flex-row;
+}
+
+@utility column {
+  @apply flex flex-col;
 }
 
 @layer base {

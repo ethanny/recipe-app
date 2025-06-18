@@ -2,17 +2,16 @@ export default async function RecipeLoading() {
   return (
     <div
       className="
-        flex flex-col
-        md:flex-row
+        column
+        md:row
       "
     >
       <>
         <section
           className="
-            flex flex-col
             py-6 px-4
             bg-foreground
-            gap-4 items-center
+            column gap-4 items-center
             md:w-1/3 md:h-screen
           "
         >
@@ -51,10 +50,9 @@ export default async function RecipeLoading() {
 
         <section
           className="
-            flex flex-col
             h-screen
             py-6 px-4
-            gap-8
+            column gap-8
             md:overflow-y-auto md:w-2/3
           "
         >
@@ -71,11 +69,10 @@ function RecipeStat() {
   return (
     <div
       className={`
-        flex flex-row
         w-full h-10
         bg-white/50
         animate-pulse
-        gap-1 items-center justify-center
+        row gap-1 items-center justify-center
       `}
     ></div>
   );
@@ -85,8 +82,7 @@ function RecipeDetails({ label }: { label: string }) {
   return (
     <div
       className="
-        flex flex-col
-        gap-4
+        column gap-4
       "
     >
       <h2
@@ -103,12 +99,11 @@ function RecipeDetails({ label }: { label: string }) {
           <div
             key={index}
             className="
-              flex flex-col
               h-10
               py-2
               bg-foreground/20
               animate-pulse
-              gap-2
+              column gap-2
             "
           ></div>
         ))}

@@ -5,7 +5,7 @@ export default function NotFoundPage() {
   return (
     <div
       className="
-        flex flex-col
+        column
         h-screen
         p-4
         text-center

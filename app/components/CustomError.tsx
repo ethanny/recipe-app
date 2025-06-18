@@ -4,11 +4,10 @@ export default function ErrorPage({ message }: { message: string }) {
   return (
     <div
       className="
-        flex flex-col
         h-screen
         p-4
         text-center
-        gap-4 items-center justify-center
+        column gap-4 items-center justify-center
       "
     >
       <Image src={"/no-ramen.svg"} alt="Sad ramen" width={150} height={150} />

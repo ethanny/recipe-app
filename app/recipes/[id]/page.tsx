@@ -1,7 +1,9 @@
-import { Book, LucideIcon, Timer, Users } from "lucide-react";
+import RecipeCardStat from "@/app/components/Recipe Card/RecipeCardStat";
+import { Book, Timer, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import RecipeDetails from "../components/RecipeDetails";
 
 interface RecipeDetailsProps {
   params: Promise<{ id: string }>;
@@ -16,9 +18,7 @@ export default async function RecipePage({ params }: RecipeDetailsProps) {
   const { id } = await params;
 
   async function getRecipe() {
-    const recipe = await fetch(
-      `http://localhost:3000/api/recipes?a=get&q=recipe&id=${id}`,
-    );
+    const recipe = await fetch(`http://localhost:3000/api/recipes?id=${id}`);
     const recipeData = await recipe.json();
 
     if (recipeData.message === "Invalid request") {
@@ -37,19 +37,18 @@ export default async function RecipePage({ params }: RecipeDetailsProps) {
   return (
     <div
       className="
-        flex flex-col
-        md:flex-row
+        column
+        md:row
       "
     >
       <>
         {/* Recipe stats */}
         <section
           className="
-            flex flex-col
             py-6 px-4
             text-background
             bg-foreground
-            gap-4 items-center
+            column gap-4 items-center
             md:w-1/3 md:h-screen
           "
         >
@@ -67,11 +66,11 @@ export default async function RecipePage({ params }: RecipeDetailsProps) {
               border-2
             "
           >
-            <RecipeStat stat={selectedRecipe.cookingTime} icon={Timer} />
+            <RecipeCardStat stat={selectedRecipe.cookingTime} icon={Timer} />
 
             <hr />
 
-            <RecipeStat stat={selectedRecipe.servings} icon={Users} />
+            <RecipeCardStat stat={selectedRecipe.servings} icon={Users} />
 
             <hr />
 
@@ -95,14 +94,13 @@ export default async function RecipePage({ params }: RecipeDetailsProps) {
           >
             <button
               className="
-                flex flex-row
                 w-full
                 px-3 py-1
                 text-foreground
                 bg-background
                 rounded-md
                 cursor-pointer transition-all
-                duration-200 gap-1 items-center justify-center hover:scale-95
+                row duration-200 gap-1 items-center justify-center hover:scale-95
               "
             >
               <Book
@@ -118,10 +116,9 @@ export default async function RecipePage({ params }: RecipeDetailsProps) {
         {/* Recipe ingredients and instructions */}
         <section
           className="
-            flex flex-col
             h-screen
             py-6 px-4
-            gap-8
+            column gap-8
             md:overflow-y-auto md:w-2/3
           "
         >
@@ -136,89 +133,6 @@ export default async function RecipePage({ params }: RecipeDetailsProps) {
           />
         </section>
       </>
-    </div>
-  );
-}
-
-function RecipeStat({ stat, icon: Icon }: { stat: string; icon: LucideIcon }) {
-  return (
-    <div
-      className={`
-        flex flex-row
-        w-full
-        p-0.5
-        gap-1 items-center justify-center
-      `}
-    >
-      <Icon
-        className="
-          size-4
-          md:size-5
-        "
-      />
-      <p>{stat}</p>
-    </div>
-  );
-}
-
-function RecipeDetails({
-  label,
-  details,
-}: {
-  label: string;
-  details: string[];
-}) {
-  return (
-    <div
-      className="
-        flex flex-col
-        gap-4
-      "
-    >
-      <h2
-        className="
-          pb-2
-          border-b-2
-        "
-      >
-        {label}
-      </h2>
-
-      <div>
-        {details.map((detail, index) => (
-          <div
-            key={index}
-            className="
-              flex flex-col
-              py-2
-              gap-2
-            "
-          >
-            {label === "Instructions" && (
-              <p
-                className="
-                  w-fit
-                  px-4
-                  text-background
-                  bg-foreground
-                  rounded-full
-                "
-              >
-                Step {index + 1}
-              </p>
-            )}
-
-            <p
-              className="
-                text-black
-                border-b-2 border-dashed border-foreground/35
-              "
-            >
-              {detail}
-            </p>
-          </div>
-        ))}
-      </div>
     </div>
   );
 }

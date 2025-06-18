@@ -2,10 +2,9 @@ export default function LoadingCard({ index }: { index: number }) {
   return (
     <div
       className={`
-        flex flex-col
-        px-2 pt-2 pb-0
+        pt-2 pb-0 px-2
         border-b-2
-        items-center relative
+        column items-center relative
         md:px-4 md:pt-4 md:items-end
         ${index % 3 !== 0 ? "lg:border-r-2" : ""}
         ${index % 2 === 1 ? "md:max-lg:border-r-2" : ""}
@@ -29,10 +28,9 @@ export default function LoadingCard({ index }: { index: number }) {
       />
       <div
         className="
-          flex flex-row
           w-full
           py-2
-          gap-2
+          row gap-2
         "
       >
         <RecipeCardDetails
@@ -68,7 +66,7 @@ function RecipeCardDetails({ className }: { className?: string }) {
   return (
     <div
       className={`
-        flex flex-row
+        row
         w-full h-10
         p-0.5
         bg-foreground/20

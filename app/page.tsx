@@ -2,7 +2,7 @@
 
 import { Recipe } from "./api/recipes/route";
 import { useEffect, useState } from "react";
-import RecipeCard from "./components/RecipeCard";
+import RecipeCard from "./components/Recipe Card/RecipeCard";
 import LoadingCard from "./components/LoadingCard";
 import Link from "next/link";
 import ErrorPage from "./components/CustomError";
@@ -10,7 +10,7 @@ import Image from "next/image";
 
 export default function Home() {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState<Boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
   async function loadRecipes() {
@@ -20,9 +20,7 @@ export default function Home() {
     try {
       // Simulate a delay
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      const res = await fetch(
-        "http://localhost:3000/api/recipes?a=get&q=recipes",
-      );
+      const res = await fetch("http://localhost:3000/api/recipes");
       const data = await res.json();
 
       if (data.message === "Invalid request") {
@@ -50,18 +48,15 @@ export default function Home() {
   return (
     <div
       className="
-        flex flex-col
         p-4
-        gap-4
+        column gap-4
         md:p-8 md:gap-8
       "
     >
-
       {/* Logo and title */}
       <header
         className="
-          flex flex-row
-          items-center gap-4 justify-center
+          row items-center gap-4 justify-center
           md:justify-start
         "
       >

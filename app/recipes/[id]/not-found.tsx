@@ -5,11 +5,10 @@ export default function RecipeNotFound() {
   return (
     <div
       className="
-        flex flex-col
         h-screen
         p-4
         text-center
-        gap-4 items-center justify-center
+        column gap-4 items-center justify-center
       "
     >
       <Image src={"/no-ramen.svg"} alt="Sad ramen" width={150} height={150} />
@@ -21,9 +20,8 @@ export default function RecipeNotFound() {
           className="
             px-4
             border-2 border-foreground rounded-full
-            transition-all duration-200
-            cursor-pointer
-            hover:bg-foreground hover:text-background
+            transition-all cursor-pointer
+            duration-200 hover:bg-foreground hover:text-background
           "
         >
           <p>View existing ramen recipes</p>

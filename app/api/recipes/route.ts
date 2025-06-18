@@ -19,27 +19,18 @@ type ApiResponse = {
 
 export async function GET(request: NextRequest){
     const url = request.nextUrl.searchParams
-    const action = url.get('a')
-    const query = url.get('q')
     const id = url.get('id')
 
     let res: ApiResponse = {message: 'Invalid request'}
 
-    // Get all recipes
-    if (action == 'get' && query == 'recipes'){
-        res = {
-            message: '',
-            recipes: recipes
-        }
-
     // Get a single recipe by id
-    }else if (action == 'get' && query == 'recipe' && id){
+    if (id){
         const recipe = recipes.find((recipe: Recipe) => recipe.id === id);
        
         // Recipe is found
         if (recipe) {
             res = {
-                message: '',
+                message: 'Successfully fetched recipe',
                 recipes: recipe
             }
             return NextResponse.json(res);
@@ -51,7 +42,14 @@ export async function GET(request: NextRequest){
                 { status: 404 }
             );
         }
-    }
+    // Get all recipes
+    }else {
+        res = {
+            message: 'Successfully fetched all recipes',
+            recipes: recipes
+        }
+    }   
+
 
     return NextResponse.json(res);
 }
