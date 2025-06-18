@@ -18,6 +18,7 @@ export default function Home() {
     setError(null);
 
     try {
+      // Simulate a delay
       await new Promise((resolve) => setTimeout(resolve, 1000));
       const res = await fetch(
         "http://localhost:3000/api/recipes?a=get&q=recipes",
@@ -51,10 +52,12 @@ export default function Home() {
       className="
         flex flex-col
         p-4
-        gap-2
-        md:gap-4
+        gap-4
+        md:p-8 md:gap-8
       "
     >
+
+      {/* Logo and title */}
       <header
         className="
           flex flex-row
@@ -62,7 +65,6 @@ export default function Home() {
           md:justify-start
         "
       >
-        {/* Title */}
         <Image
           src={"/logo.svg"}
           alt="Ramen Logo"
@@ -72,9 +74,11 @@ export default function Home() {
             h-full
           "
         />
+
         <h1>Ramen Recipes</h1>
       </header>
 
+      {/* Recipe List*/}
       <section
         className="
           grid grid-cols-1
@@ -83,6 +87,7 @@ export default function Home() {
           lg:grid-cols-3
         "
       >
+        {/* Loading state */}
         {isLoading && (
           <>
             {Array.from({ length: 12 }).map((_, index) => (
@@ -90,6 +95,8 @@ export default function Home() {
             ))}
           </>
         )}
+
+        {/* Recipe cards */}
         {recipes.map((recipe: Recipe, index: number) => (
           <Link href={`/recipes/${recipe.id}`} key={index}>
             <RecipeCard recipe={recipe} index={index + 1} />

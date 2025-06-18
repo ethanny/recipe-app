@@ -77,7 +77,7 @@ export default function RecipeCard({ recipe, index }: RecipeCardProps) {
         "
       >
         <Image
-          src={"/Tonkatsu Ramen.png"}
+          src={recipe.image}
           alt={recipe.name}
           width={300}
           height={200}

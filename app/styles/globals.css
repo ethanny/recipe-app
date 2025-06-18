@@ -44,30 +44,12 @@ body {
     @apply border-1;
   }
 
-  @keyframes mask-reveal {
-  from {
-    clip-path: inset(100% 0% 0% 0%);
-  }
-  to {
-    clip-path: inset(0% 0% 0% 0%);
-  }
-}
-
-.mask-reveal {
-  animation: mask-reveal 0.5s cubic-bezier(0.4,0,0.2,1) forwards;
-}
-.mask-hide {
-  clip-path: inset(100% 0% 0% 0%);
-  transition: clip-path 0.5s cubic-bezier(0.4,0,0.2,1);
-}
-
   html {
     scrollbar-color: var(--color-foreground) var(--color-background);
     scroll-behavior: smooth;
     font-family: "Acid-Grotesk Normal", sans-serif;
   }
 }
-
 
 ::-webkit-scrollbar-thumb {
   background: var(--color-foreground);

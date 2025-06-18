@@ -20,7 +20,7 @@
       ],
       "cookingTime": "10 hours",
       "servings": 2,
-      "image": "https://example.com/images/hakata.jpg"
+      "image": "/Ramen/Hakata Ramen.png"
     },
     {
       "id": "ramen02",
@@ -46,7 +46,7 @@
       ],
       "cookingTime": "30 minutes",
       "servings": 2,
-      "image": "https://example.com/images/hiyashi.jpg"
+      "image": "/Ramen/Hiyashi Chūka.png"
     },
     {
       "id": "ramen03",
@@ -68,7 +68,7 @@
       ],
       "cookingTime": "1.5 hours",
       "servings": 2,
-      "image": "https://example.com/images/kitakata.jpg"
+      "image": "/Ramen/Kitakata Ramen.png"
     },
     {
       "id": "ramen04",
@@ -91,7 +91,7 @@
       ],
       "cookingTime": "2 hours",
       "servings": 2,
-      "image": "https://example.com/images/kyoto.jpg"
+      "image": "/Ramen/Kyoto Ramen.png"
     },
     {
       "id": "ramen05",
@@ -115,7 +115,7 @@
       ],
       "cookingTime": "1 hour",
       "servings": 2,
-      "image": "https://example.com/images/miso.jpg"
+      "image": "/Ramen/Miso Ramen.png"
     },
     {
       "id": "ramen06",
@@ -137,7 +137,7 @@
       ],
       "cookingTime": "2 hours",
       "servings": 2,
-      "image": "https://example.com/images/onomichi.jpg"
+      "image": "/Ramen/Onomichi Ramen.png"
     },
     {
       "id": "ramen07",
@@ -160,7 +160,7 @@
       ],
       "cookingTime": "45 minutes",
       "servings": 2,
-      "image": "https://example.com/images/shio.jpg"
+      "image": "/Ramen/Shio Ramen.png"
     },
     {
       "id": "ramen08",
@@ -182,7 +182,7 @@
       ],
       "cookingTime": "1 hour",
       "servings": 2,
-      "image": "https://example.com/images/shoyu.jpg"
+      "image": "/Ramen/Shoyu Ramen.png"
     },
     {
       "id": "ramen09",
@@ -206,7 +206,7 @@
       ],
       "cookingTime": "1 hour",
       "servings": 2,
-      "image": "https://example.com/images/tantanmen.jpg"
+      "image": "/Ramen/Tantanmen.png"
     },
     {
       "id": "ramen10",
@@ -230,7 +230,7 @@
       ],
       "cookingTime": "10 hours",
       "servings": 2,
-      "image": "https://example.com/images/tonkotsu.jpg"
+      "image": "/Ramen/Tonkotsu Ramen.png"
     },
     {
       "id": "ramen11",
@@ -252,7 +252,7 @@
       ],
       "cookingTime": "2 hours",
       "servings": 2,
-      "image": "https://example.com/images/tokyo.jpg"
+      "image": "/Ramen/Tokyo-style Ramen.png"
     },
     {
       "id": "ramen12",
@@ -274,6 +274,6 @@
       ],
       "cookingTime": "1 hour",
       "servings": 2,
-      "image": "https://example.com/images/tsukemen.jpg"
+      "image": "/Ramen/Tsukemen.png"
     }
   ]

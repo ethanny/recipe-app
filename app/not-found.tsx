@@ -16,12 +16,14 @@ export default function NotFoundPage() {
 
       <h1>Uh-oh! No ramen recipes here.</h1>
 
+      {/* Go back to recipe list */}
       <Link href="/">
         <button
           className="
             px-4
             border-2 border-foreground rounded-full
             transition-all duration-200
+            cursor-pointer
             hover:bg-foreground hover:text-background
           "
         >

@@ -15,12 +15,14 @@ export default function RecipeNotFound() {
       <Image src={"/no-ramen.svg"} alt="Sad ramen" width={150} height={150} />
       <h1>Uh-oh! No recipe for that yet</h1>
 
+      {/* Go back to recipe list */}
       <Link href="/">
         <button
           className="
             px-4
             border-2 border-foreground rounded-full
             transition-all duration-200
+            cursor-pointer
             hover:bg-foreground hover:text-background
           "
         >

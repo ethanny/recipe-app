@@ -13,7 +13,6 @@ export default async function RecipePage({ params }: RecipeDetailsProps) {
 
   //   simulate loading
   await new Promise((resolve) => setTimeout(resolve, 1000));
-
   const { id } = await params;
 
   async function getRecipe() {
@@ -43,6 +42,7 @@ export default async function RecipePage({ params }: RecipeDetailsProps) {
       "
     >
       <>
+        {/* Recipe stats */}
         <section
           className="
             flex flex-col
@@ -76,7 +76,7 @@ export default async function RecipePage({ params }: RecipeDetailsProps) {
             <hr />
 
             <Image
-              src={"/Tonkatsu Ramen.png"}
+              src={selectedRecipe.image}
               alt={selectedRecipe.name}
               width={300}
               height={200}
@@ -86,16 +86,23 @@ export default async function RecipePage({ params }: RecipeDetailsProps) {
             />
           </div>
 
-          <Link href="/">
+          {/* Go back to recipe list */}
+          <Link
+            href="/"
+            className="
+              w-full
+            "
+          >
             <button
               className="
                 flex flex-row
+                w-full
                 px-3 py-1
                 text-foreground
                 bg-background
                 rounded-md
                 cursor-pointer transition-all
-                duration-200 gap-1 items-center hover:scale-95
+                duration-200 gap-1 items-center justify-center hover:scale-95
               "
             >
               <Book
@@ -108,6 +115,7 @@ export default async function RecipePage({ params }: RecipeDetailsProps) {
           </Link>
         </section>
 
+        {/* Recipe ingredients and instructions */}
         <section
           className="
             flex flex-col

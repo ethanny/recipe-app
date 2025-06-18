@@ -25,20 +25,26 @@ export async function GET(request: NextRequest){
 
     let res: ApiResponse = {message: 'Invalid request'}
 
+    // Get all recipes
     if (action == 'get' && query == 'recipes'){
         res = {
             message: '',
             recipes: recipes
         }
+
+    // Get a single recipe by id
     }else if (action == 'get' && query == 'recipe' && id){
         const recipe = recipes.find((recipe: Recipe) => recipe.id === id);
        
+        // Recipe is found
         if (recipe) {
             res = {
                 message: '',
                 recipes: recipe
             }
             return NextResponse.json(res);
+
+        // Recipe is not found
         } else {
             return NextResponse.json(
                 { message: 'Recipe not found' },

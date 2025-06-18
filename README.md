@@ -1,18 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Recipe App
+
+A modern ramen recipe application built with Next.js that allows users to browse a collection of ramen recipes, view detailed ramen recipe information, and access cooking instructions. The app demonstrates the use of React hooks, state management, and responsive design, with data served from a local API endpoint. For more details about the data structure and project requirements, see [INSTRUCTIONS.md](./INSTRUCTIONS.md).
+
+## Features
+- Browse a collection of ramen recipes on the home page
+- View detailed ramen recipe information including ingredients and cooking instructions
+- Responsive design for optimal viewing on all devices
+- Clean and intuitive user interface
 
 ## Getting Started
 
-First, run the development server:
+To set up and run the project locally:
 
 ```bash
-pnpm dev
+npm install
+npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Data Source
+
+Recipe data is served from a local API endpoint. For more details about the data structure and project requirements, see [INSTRUCTIONS.md](./INSTRUCTIONS.md).
+
+## Screenshots
+
+### Homepage (Recipe List)
+![Homepage Screenshot](./public/screenshots/homepage.png)
+
+### Recipe Details Page
+![Recipe Details Screenshot](/public/screenshots/recipeDetail.png)
+
+### Loading State
+![Loading State Screenshot](/public/screenshots/homeLoading.png)
+
+### Error State
+![Error State Screenshot](/public/screenshots/error.png)
+
+### Not Found State
+![Not Found State Screenshot](/public/screenshots/notFound.png)
+
+### Responsive Design
+![Responsive Home Design Screenshot](/public/screenshots/homeResponsive.png)
+![Responsive Recipe Detail Design Screenshot](/public/screenshots/detailResponsive.png)
 
 ## Learn More
 
