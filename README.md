@@ -46,6 +46,11 @@ Recipe data is served from a local API endpoint. For more details about the data
 ![Responsive Home Design Screenshot](/public/screenshots/homeResponsive.png)
 ![Responsive Recipe Detail Design Screenshot](/public/screenshots/detailResponsive.png)
 
+### Demo
+https://github.com/user-attachments/assets/e67f6c41-9c41-43da-8c4b-c5c78d4e5a5d
+
+
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
