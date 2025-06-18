@@ -115,7 +115,7 @@ export default function RecipeCard({ recipe, index }: RecipeCardProps) {
   );
 }
 
-export function RecipeCardDetails({
+function RecipeCardDetails({
   icon: Icon,
   detail,
   className,

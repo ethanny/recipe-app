@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function NotFoundPage() {
   return (
@@ -12,7 +13,21 @@ export default function NotFoundPage() {
       "
     >
       <Image src={"/no-ramen.svg"} alt="Sad ramen" width={150} height={150} />
+
       <h1>Uh-oh! No ramen recipes here.</h1>
+
+      <Link href="/">
+        <div
+          className="
+            px-4
+            border-2 border-foreground rounded-full
+            transition-all duration-200
+            hover:bg-foreground hover:text-background
+          "
+        >
+          <p>Go back to recipe list</p>
+        </div>
+      </Link>
     </div>
   );
 }

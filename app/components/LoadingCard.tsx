@@ -64,7 +64,7 @@ export default function LoadingCard({ index }: { index: number }) {
   );
 }
 
-export function RecipeCardDetails({ className }: { className?: string }) {
+function RecipeCardDetails({ className }: { className?: string }) {
   return (
     <div
       className={`

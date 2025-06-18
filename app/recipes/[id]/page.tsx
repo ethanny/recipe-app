@@ -1,60 +1,37 @@
-"use client";
-
-import { Recipe } from "@/app/api/recipes/route";
-import { use, useEffect, useState } from "react";
-import { Timer, Users } from "lucide-react";
-import { RecipeCardDetails } from "@/app/components/RecipeCard";
+import { LucideIcon, Timer, Users } from "lucide-react";
 import Image from "next/image";
-import ErrorPage from "@/app/components/Error";
+import { notFound } from "next/navigation";
 
 interface RecipeDetailsProps {
   params: Promise<{ id: string }>;
 }
 
-export default function RecipePage({ params }: RecipeDetailsProps) {
-  const { id } = use(params);
-  const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+export default async function RecipePage({ params }: RecipeDetailsProps) {
+//   simulate error
+//   throw new Error("Test error for error boundary");
 
-  async function loadRecipes() {
-    setIsLoading(true);
-    try {
-      const res = await fetch(
-        `http://localhost:3000/api/recipes?a=get&q=recipe&id=${id}`,
-      );
+//   simulate loading
+  await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      if (res.status === 404) {
-        throw new Error("Recipe not found");
-      }
+  const { id } = await params;
 
-      const data = await res.json();
+  async function getRecipe() {
+    const recipe = await fetch(
+      `http://localhost:3000/api/recipes?a=get&q=recipe&id=${id}`,
+    );
+    const recipeData = await recipe.json();
 
-      if (data.message === "Invalid request") {
-        throw new Error("Invalid request parameters");
-      }
-
-      setSelectedRecipe(data.recipes);
-    } catch (error) {
-      if (error instanceof Error) {
-        setError(error.message);
-      }
-    } finally {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      setIsLoading(false);
+    if (recipeData.message === "Invalid request") {
+      throw new Error("Invalid request parameters");
     }
+
+    return recipeData.recipes;
   }
 
-  useEffect(() => {
-    loadRecipes();
-  }, []);
+  const selectedRecipe = await getRecipe();
 
-  if (error) {
-    return <ErrorPage message={error} />;
-  }
-
-  if (isLoading) {
-    return <h2>Loading...</h2>;
+  if (!selectedRecipe) {
+    return notFound();
   }
 
   return (
@@ -64,81 +41,92 @@ export default function RecipePage({ params }: RecipeDetailsProps) {
         md:flex-row
       "
     >
-      {error && <h1>{error}</h1>}
-
-      {selectedRecipe && (
-        <>
-          <section
+      <>
+        <section
+          className="
+            flex flex-col
+            py-6 px-4
+            text-background
+            bg-foreground
+            gap-4 items-center
+            md:w-1/3 md:h-screen
+          "
+        >
+          <h1
             className="
-              flex flex-col
-              py-6 px-4
-              text-background
-              bg-foreground
-              gap-4 items-center
-              md:w-1/3 md:h-screen
+              md:w-full
             "
           >
-            <h1
-              className="
-                md:w-full
-              "
-            >
-              {selectedRecipe.name}
-            </h1>
+            {selectedRecipe.name}
+          </h1>
 
-            <div
+          <div
+            className="
+              w-full
+              border-2
+            "
+          >
+            <RecipeStat stat={selectedRecipe.cookingTime} icon={Timer} />
+
+            <hr />
+
+            <RecipeStat stat={selectedRecipe.servings} icon={Users} />
+
+            <hr />
+
+            <Image
+              src={"/Tonkatsu Ramen.png"}
+              alt={selectedRecipe.name}
+              width={300}
+              height={200}
               className="
                 w-full
-                border-2
               "
-            >
-              <RecipeCardDetails
-                icon={Timer}
-                detail={selectedRecipe.cookingTime}
-              />
-
-              <hr />
-
-              <RecipeCardDetails
-                icon={Users}
-                detail={selectedRecipe.servings}
-              />
-
-              <hr />
-
-              <Image
-                src={"/Tonkatsu Ramen.png"}
-                alt={selectedRecipe.name}
-                width={300}
-                height={200}
-                className="
-                  w-full
-                "
-              />
-            </div>
-          </section>
-
-          <section
-            className="
-              flex flex-col
-              h-screen
-              py-6 px-4
-              gap-8
-              md:overflow-y-auto md:w-2/3
-            "
-          >
-            <RecipeDetails
-              label="Ingredients"
-              details={selectedRecipe.ingredients}
             />
+          </div>
+        </section>
 
-            <RecipeDetails
-              label="Instructions"
-              details={selectedRecipe.instructions}
-            />
-          </section>
-        </>
-      )}
+        <section
+          className="
+            flex flex-col
+            h-screen
+            py-6 px-4
+            gap-8
+            md:overflow-y-auto md:w-2/3
+          "
+        >
+          <RecipeDetails
+            label="Ingredients"
+            details={selectedRecipe.ingredients}
+          />
+
+          <RecipeDetails
+            label="Instructions"
+            details={selectedRecipe.instructions}
+          />
+        </section>
+      </>
+    </div>
+  );
+}
+
+function RecipeStat({ stat, icon: Icon }: { stat: string; icon: LucideIcon }) {
+  return (
+    <div
+      className={`
+        flex flex-row
+        w-full
+        p-0.5
+        gap-1 items-center justify-center
+      `}
+    >
+      <Icon
+        className="
+          size-4
+          md:size-5
+        "
+      />
+      <p>{stat}</p>
     </div>
   );
 }

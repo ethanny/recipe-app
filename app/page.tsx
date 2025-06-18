@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import RecipeCard from "./components/RecipeCard";
 import LoadingCard from "./components/LoadingCard";
 import Link from "next/link";
-import ErrorPage from "./components/Error";
+import ErrorPage from "./components/CustomError";
 
 export default function Home() {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
