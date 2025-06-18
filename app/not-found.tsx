@@ -17,7 +17,7 @@ export default function NotFoundPage() {
       <h1>Uh-oh! No ramen recipes here.</h1>
 
       <Link href="/">
-        <div
+        <button
           className="
             px-4
             border-2 border-foreground rounded-full
@@ -26,7 +26,7 @@ export default function NotFoundPage() {
           "
         >
           <p>Go back to recipe list</p>
-        </div>
+        </button>
       </Link>
     </div>
   );

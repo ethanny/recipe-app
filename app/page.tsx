@@ -6,6 +6,7 @@ import RecipeCard from "./components/RecipeCard";
 import LoadingCard from "./components/LoadingCard";
 import Link from "next/link";
 import ErrorPage from "./components/CustomError";
+import Image from "next/image";
 
 export default function Home() {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
@@ -49,33 +50,29 @@ export default function Home() {
     <div
       className="
         flex flex-col
-        p-2
+        p-4
         gap-2
-        md:p-4 md:gap-4
+        md:gap-4
       "
     >
-      {error && <div>{error}</div>}
       <header
         className="
-          flex flex-col
-          items-center justify-between
-          md:flex-row
+          flex flex-row
+          items-center gap-4 justify-center
+          md:justify-start
         "
       >
         {/* Title */}
-        <h1>Ramen Recipes</h1>
-
-        {/* Search */}
-        <div
+        <Image
+          src={"/logo.svg"}
+          alt="Ramen Logo"
+          width={50}
+          height={50}
           className="
-            w-full
-            p-2
-            border-2
-            md:w-1/3
+            h-full
           "
-        >
-          <h2>Search</h2>
-        </div>
+        />
+        <h1>Ramen Recipes</h1>
       </header>
 
       <section

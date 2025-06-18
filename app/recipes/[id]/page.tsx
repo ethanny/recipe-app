@@ -1,5 +1,6 @@
-import { LucideIcon, Timer, Users } from "lucide-react";
+import { Book, LucideIcon, Timer, Users } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 interface RecipeDetailsProps {
@@ -7,10 +8,10 @@ interface RecipeDetailsProps {
 }
 
 export default async function RecipePage({ params }: RecipeDetailsProps) {
-//   simulate error
-//   throw new Error("Test error for error boundary");
+  //   simulate error
+  //   throw new Error("Test error for error boundary");
 
-//   simulate loading
+  //   simulate loading
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
   const { id } = await params;
@@ -84,6 +85,27 @@ export default async function RecipePage({ params }: RecipeDetailsProps) {
               "
             />
           </div>
+
+          <Link href="/">
+            <button
+              className="
+                flex flex-row
+                px-3 py-1
+                text-foreground
+                bg-background
+                rounded-md
+                cursor-pointer transition-all
+                duration-200 gap-1 items-center hover:scale-95
+              "
+            >
+              <Book
+                className="
+                  size-5
+                "
+              />
+              <p>View all recipes</p>
+            </button>
+          </Link>
         </section>
 
         <section

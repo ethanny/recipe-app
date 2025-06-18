@@ -16,7 +16,7 @@ export default function RecipeNotFound() {
       <h1>Uh-oh! No recipe for that yet</h1>
 
       <Link href="/">
-        <div
+        <button
           className="
             px-4
             border-2 border-foreground rounded-full
@@ -25,7 +25,7 @@ export default function RecipeNotFound() {
           "
         >
           <p>View existing ramen recipes</p>
-        </div>
+        </button>
       </Link>
     </div>
   );
