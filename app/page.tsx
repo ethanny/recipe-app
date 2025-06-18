@@ -1,8 +1,11 @@
 "use client";
+
 import { Recipe } from "./api/recipes/route";
 import { useEffect, useState } from "react";
 import RecipeCard from "./components/RecipeCard";
+import LoadingCard from "./components/LoadingCard";
 import Link from "next/link";
+import ErrorPage from "./components/Error";
 
 export default function Home() {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
@@ -10,10 +13,11 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null);
 
   async function loadRecipes() {
-    setError(null);
     setIsLoading(true);
+    setError(null);
 
     try {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
       const res = await fetch(
         "http://localhost:3000/api/recipes?a=get&q=recipes",
       );
@@ -29,7 +33,6 @@ export default function Home() {
         setError(error.message);
       }
     } finally {
-      // await new Promise((resolve) => setTimeout(resolve, 1000));
       setIsLoading(false);
     }
   }
@@ -38,16 +41,8 @@ export default function Home() {
     loadRecipes();
   }, []);
 
-  if (isLoading) {
-    return (
-      <div
-        className="
-          text-4xl
-        "
-      >
-        Loading...
-      </div>
-    );
+  if (error) {
+    return <ErrorPage message={error} />;
   }
 
   return (
@@ -68,13 +63,7 @@ export default function Home() {
         "
       >
         {/* Title */}
-        <h1
-          className="
-            sticky top-0
-          "
-        >
-          Ramen Recipes
-        </h1>
+        <h1>Ramen Recipes</h1>
 
         {/* Search */}
         <div
@@ -97,6 +86,13 @@ export default function Home() {
           lg:grid-cols-3
         "
       >
+        {isLoading && (
+          <>
+            {Array.from({ length: 12 }).map((_, index) => (
+              <LoadingCard key={index} index={index + 1} />
+            ))}
+          </>
+        )}
         {recipes.map((recipe: Recipe, index: number) => (
           <Link href={`/recipes/${recipe.id}`} key={index}>
             <RecipeCard recipe={recipe} index={index + 1} />

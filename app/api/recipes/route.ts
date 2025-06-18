@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+ 
 import recipes from "../../data/recipes.json";
 
 export type Recipe = {

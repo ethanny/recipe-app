@@ -2,10 +2,10 @@
 
 import { Recipe } from "@/app/api/recipes/route";
 import { use, useEffect, useState } from "react";
-import { notFound } from "next/navigation";
 import { Timer, Users } from "lucide-react";
 import { RecipeCardDetails } from "@/app/components/RecipeCard";
 import Image from "next/image";
+import ErrorPage from "@/app/components/Error";
 
 interface RecipeDetailsProps {
   params: Promise<{ id: string }>;
@@ -25,7 +25,7 @@ export default function RecipePage({ params }: RecipeDetailsProps) {
       );
 
       if (res.status === 404) {
-        notFound();
+        throw new Error("Recipe not found");
       }
 
       const data = await res.json();
@@ -48,6 +48,14 @@ export default function RecipePage({ params }: RecipeDetailsProps) {
   useEffect(() => {
     loadRecipes();
   }, []);
+
+  if (error) {
+    return <ErrorPage message={error} />;
+  }
+
+  if (isLoading) {
+    return <h2>Loading...</h2>;
+  }
 
   return (
     <div

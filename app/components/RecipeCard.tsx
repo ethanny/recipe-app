@@ -1,3 +1,5 @@
+"use client";
+
 import { LucideIcon, Timer, Users } from "lucide-react";
 import { Recipe } from "../api/recipes/route";
 import Image from "next/image";
@@ -71,7 +73,7 @@ export default function RecipeCard({ recipe, index }: RecipeCardProps) {
         className="
           overflow-hidden z-1
           w-[300px] h-[200px]
-          translate-x-4 relative // Set the bounding box size // Hide overflow
+          translate-x-4 relative
         "
       >
         <Image
