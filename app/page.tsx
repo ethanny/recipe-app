@@ -10,7 +10,7 @@ import Image from "next/image";
 
 export default function Home() {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
-  const [isLoading, setIsLoading] = useState<Boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
   async function loadRecipes() {

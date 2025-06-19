@@ -17,17 +17,15 @@ export default async function RecipeLoading() {
         >
           <h1
             className="
-              h-10
+              h-10 w-full
               bg-white/50
               animate-pulse
-              md:w-full
             "
           ></h1>
 
           <div
             className="
               w-full
-              border-2
             "
           >
             <RecipeStat />
